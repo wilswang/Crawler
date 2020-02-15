@@ -32,8 +32,9 @@ count=0
 Current=1
 result="\n"
 Result=str()
-get=getData(url, result)
+# get=getData(url, result)
 while count<page:
+    get=getData(url, result)
     Currentpage= "Page %d \n" % Current
     result=Currentpage+get[0]+"\n" 
     url="https://www.ptt.cc"+get[1]
@@ -41,6 +42,7 @@ while count<page:
     Current+=1
     Result+=result
     result="\n"
+# print(Result)
 #將結果寫入txt
 with open ("gossiping.txt","w",encoding="utf-8") as file:
     file.write(Result)
